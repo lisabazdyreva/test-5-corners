@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Logo - онлайн-магазин</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>Каталог</li>
+        <li>О компании</li>
+        <li>Магазины</li>
+      </ul>
+      <img alt=""/>
+      <button type="button">Поиск</button>
+      <button type="button">Личный кабинет</button>
+      <button type="button">Избранное</button>
+      <button type="button">Корзина</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="breadcrumbs">
+      <p>Главная</p>
+      <p>Оформление заказа</p>
+    </div>
+
+    <h1>Оформление заказа</h1>
+    <div>
+      Есть аккаунт? <a href="#">Войти</a>
+    </div>
+
+    <h2 class="visually-hidden">Товары в корзине</h2>
+    <h3>3 товара на сумму 25 000Р</h3>
+
+    <div class="perches">
+      <ul class="perches__list">
+        <li class="perches__item">
+          <div class="item">
+            <img alt=""/>
+            <div>
+              <p>Утепленная стеганная куртка женская Top Hills</p>
+              <p>Артикул 512-05</p>
+              <p>Сезон Осень-зима</p>
+              <div>
+                <button type="button">XS</button>
+                <button type="button">S</button>
+                <button type="button">M</button>
+                <button type="button">L</button>
+                <button type="button">XL</button>
+              </div>
+
+              <div>
+                <button type="button">Black</button>
+                <button type="button">Blue</button>
+                <button type="button">Orange</button>
+              </div>
+            </div>
+
+            <div>
+              <p>12 000P</p>
+              <p>10 000P</p>
+            </div>
+
+            <div>
+              <button type="button">-</button>
+              <label class="visually-hidden" for="counter__2"></label>
+              <input id="counter__2" type="number" value="2"/>
+<!--              <button type="button">2</button>-->
+              <button type="button">+</button>
+            </div>
+
+            <div>
+              <p>24 000P</p>
+              <p>20 000P</p>
+            </div>
+
+            <button type="button">Close</button>
+          </div>
+        </li>
+
+        <li>
+          <p>Товар Наименование товара был удален из корзины. </p>
+          <button type="button">Восстановить</button>
+          <button type="button">Close</button>
+        </li>
+
+        <li class="perches__item">
+          <div class="item">
+            <img alt=""/>
+            <div>
+              <p>Вязанная шапка Zolla</p>
+              <p>Артикул 891-256</p>
+              <p>Сезон Демисезон</p>
+              <div>
+                <button type="button">XS</button>
+                <button type="button">S</button>
+                <button type="button">M</button>
+                <button type="button" disabled>L</button>
+                <button type="button" disabled>XL</button>
+              </div>
+
+              <div>
+                <button type="button">Black</button>
+              </div>
+            </div>
+
+            <div>
+              <p>500P</p>
+            </div>
+
+            <div>
+              <button type="button" disabled>-</button>
+              <label class="visually-hidden" for="counter"></label>
+              <input id="counter" type="number" value="1"/>
+<!--              <button type="button">1</button>-->
+              <button type="button">+</button>
+            </div>
+
+            <div>
+              <p>500P</p>
+            </div>
+
+            <button type="button">Close</button>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <h2 class="visually-hidden">Форма обратной связи</h2>
+
+    <div>
+      <h3>Контактные данные</h3>
+      <form>
+
+        <fieldset>
+          <label for="name">Имя</label>
+          <input id="name" type="text" placeholder="Имя" value="Александр"/>
+
+          <label for="surname" class="visually-hidden">Фамилия</label>
+          <input id="surname" type="text" placeholder="Фамилия"/>
+        </fieldset>
+
+        <fieldset>
+          <label for="phone" class="visually-hidden">Номер телефона</label>
+          <input id="phone" type="tel" placeholder="Телефон"/>
+
+          <label for="email" class="visually-hidden">Адрес электронной почты</label>
+          <input id="email" type="email" placeholder="Email"/>
+        </fieldset>
+
+        <label for="address">Адрес доставки</label>
+        <input id="address" type="text" placeholder="Адрес доставки" value="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" />
+      </form>
+
+      <h3>Оплата</h3>
+
+      <label for="cash">Наличными курьеру</label>
+      <input id="cash" type="radio" name="payment"/>
+      <label for="card__courier">Картой курьеру</label>
+      <input id="card__courier" type="radio" name="payment"/>
+      <label for="card__online">Картой онлайн</label>
+      <input id="card__online" type="radio" name="payment"/>
+
+      <h3>Комментарий к заказу</h3>
+
+      <label class="visually hidden" for="comment">Оставьте в поле комментарий к заказу или оставьте пустым</label>
+      <textarea id="comment" maxlength="142">Комментарий к заказу</textarea>
+      <p>Использовано 0/142 символов</p>
+    </div>
+  </main>
+
+  <aside>
+
+    <div>
+      <table>
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td>Товары</td>
+            <td>24 500Р</td>
+          </tr>
+          <tr>
+            <td>Скидка</td>
+            <td>- 4 500Р</td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>- 4 000Р</td>
+          </tr>
+          <tr>
+            <td>Промокод</td>
+            <td>- 500Р</td>
+          </tr>
+          <tr>
+            <td>Доставка</td>
+            <td>200Р</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <p>Получить товар со склада</p>
+        <p>Сроки получения могут измениться</p>
+        <button type="button">Переключить</button>
+      </div>
+
+      <h2 class="visually-hidden">Итоговая цена со скидками</h2>
+      <h3>Итого: <span>20 700P</span></h3>
+
+      <label for="promo_code" class="visually-hidden">Поле для введения промокода</label>
+      <input id="promo_code" type="text" placeholder="Введите прокод"/>
+
+      <button type="submit">Оформить заказ</button>
+      <p>Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>
+    </div>
+
+    <div>
+      <img alt="" src="#"/>
+    </div>
+
+  </aside>
+  <footer></footer>
+</body>
+</html>
