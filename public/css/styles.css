@@ -17,7 +17,7 @@ a {
 }
 
 html {
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 14px;
   line-height: 18px;
 }
@@ -40,14 +40,14 @@ html {
 .main-nav__list {
   min-width: 280px;
   justify-content: space-between;
-  .main-nav__item {
-    padding-top: 27px;
-    padding-bottom: 27px;
-    .main-nav__link {
-      padding-top: 27px;
-      padding-bottom: 27px;
-    }
-  }
+}
+.main-nav__list .main-nav__item {
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+.main-nav__list .main-nav__item .main-nav__link {
+  padding-top: 27px;
+  padding-bottom: 27px;
 }
 
 .user-nav__list {
@@ -65,3 +65,5 @@ html {
   padding-top: 25px;
   padding-bottom: 25px;
 }
+
+/*# sourceMappingURL=styles.css.map */
