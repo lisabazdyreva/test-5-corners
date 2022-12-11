@@ -1,13 +1,18 @@
 $black: #000000;
+$white: #FFFFFF;
+$blue: #106DA2;
+$brown: #AE6D0C;
+
 $light-gray: #6E6E6E;
 $line-gray: #C8C8C8;
+$button-gray: #F1F1F1;
 
 @font-face {
   font-family: "Helvetica", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-display: swap; // TODO что это
-  src: url("../fonts/helvetica.woff") format("woff");//url("../fonts/helvetica.woff2") format("woff2"),
+  src: url("../fonts/helvetica.woff2") format("woff2"), url("../fonts/helvetica.woff") format("woff");
 }
 
 .visually-hidden {
@@ -27,19 +32,13 @@ $line-gray: #C8C8C8;
   box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 html {
-  font-family: "Helvetica", serif; //"Arial", sans-
+  font-family: "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   color: $black;
 }
 
-.page {}
 
 .title {
   padding: 0;
@@ -48,40 +47,45 @@ html {
   font-style: normal;
 }
 
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+}
+
 //header desktop
+
 .header {
   border-bottom: 0.5px solid $line-gray;
-  .container {
-    display: flex;
+  &__container {
+    margin: 0 auto;
     align-items: center;
   }
 }
 
 .container {
+  display: flex;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-}
-
-.main-nav__list,
-.user-nav__list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .main-nav {
   margin-right: auto;
-}
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.main-nav__list {
-  .main-nav__item {
-    .main-nav__link {
-      display: block;
-      padding: 27px 20px;
-    }
-
+  &__item {
     &:first-child {
       .main-nav__link {
         padding-left: 0;
@@ -93,41 +97,43 @@ html {
         padding-right: 0;
       }
     }
-
   }
 
+  &__link {
+    display: block;
+    padding: 27px 20px;
+  }
 }
+
 
 .user-nav {
   margin-left: auto;
-
-  .user-nav__icon {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 30px;
+    padding: 26px 0;
+  }
+  &__icon {
     display: block;
   }
-
-  .user-nav__item {
+  &__search-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: block;
+  }
+  &__item {
     height: 100%;
   }
-}
-
-.user-nav__list {
-  gap: 30px;
-  padding-bottom: 26px;
-  padding-top: 26px;
-}
-
-.user-nav__button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  padding: 0;
-  display: block;
 }
 
 .logo {
   padding-top: 25px;
   padding-bottom: 25px;
-  .logo__img {
+  &__img {
     display: block;
   }
 }
@@ -137,131 +143,446 @@ html {
 .main {
   display: flex;
   justify-content: center;
-}
-
-.main .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  &__container {
+    margin: 0 auto;
+    flex-direction: column;
+  }
 }
 
 .main__content {
+  padding-top: 20px;
+}
+
+.content {
   display: flex;
-  .cart {
+  justify-content: space-between;
+
+  &__cart {
     max-width: 760px;
   }
-  .bill {
+
+  &__bill {
     max-width: 400px;
   }
 }
 
-//breadcrumbs
-
-.breadcrumbs {
+.main__breadcrumbs {
   padding-top: 50px;
   padding-bottom: 20px;
 }
 
-.breadcrumbs__list {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  gap: 10px;
-  .breadcrumbs__link {
+.breadcrumbs {
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  &__link {
+    display: block;
     font-size: 12px;
     line-height: 15px;
     color: $light-gray;
-    display: block;
-  }
-  .breadcrumbs__link--active {
-    color: $black;
+    &--active {
+      color: $black;
+    }
   }
 }
 
-//heading
+.cart {
+  width: 760px; //?
+  &__heading {
+    padding-bottom: 30px;
+  }
+  &__title {
+    font-size: 28px;
+    line-height: 30px;
+    padding-top: 30px;
+  }
+  &__purchases {
+    padding-top: 30px;
+  }
+
+  &__contacts {
+    padding-top: 40px;
+  }
+}
 
 .heading {
   display: flex;
   gap: 20px;
   align-items: flex-end;
-  padding-bottom: 30px;
-  padding-top: 20px;
-  .heading__account {
+  &__account {
     color: $light-gray;
   }
-  .heading__link {
+  &__link {
     color: $black;
     padding-left: 5px;
   }
+  &__title {
+    font-size: 40px;
+    line-height: 42px;
+  }
 }
 
-.heading__title {
-  font-size: 40px;
-  line-height: 42px;
-}
-
-//cart
-
-
-.cart {
-  padding-top: 30px;
-}
-
-.cart__title {
-  font-size: 28px;
-  line-height: 30px;
-}
-
-//purchases
 
 .purchases {
-  padding-top: 30px;
-}
-
-.purchases__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.purchase__size-list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.purchase__color-list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .purchase {
-  display: flex;
-  padding: 25px 0;
   border-bottom: 0.5px solid $line-gray;
-  border-top: 0.5px solid $line-gray;
+  &__block {
+    display: flex;
+    margin: 25px 0;
+  }
+  &:first-child {
+    border-top: 0.5px solid $line-gray;
+  }
+
+  &__description {
+    margin-left: 20px;
+    flex-grow: 1;
+  }
+  &__prices {
+    margin-left: 10px;
+  }
+  &__amount,
+  &__total-prices {
+    margin-left: 30px;
+  }
+  &__remove-btn {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin: 0 0 0 10px;
+  }
+  &__remove-icon {
+
+  }
 }
 
-.purchase__description {
-  margin-left: 20px;
+.description {
+  &__name {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    padding-bottom: 15px;
+  }
+  &__unicode,
+  &__property {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+  &__subtitle {
+    color: $light-gray;
+  }
+
+  &__size-list {
+    padding: 0 0 10px 0;
+    margin: 0;
+  }
+  &__color-list {
+    padding: 0;
+    margin: 0;
+  }
 }
 
-.purchase__prices {
-  margin-left: 10px;
+
+.size-list {
+  display: flex;
+  list-style: none;
 }
 
-.purchase__amount {
-  margin-left: 30px;
+.size-list {
+  gap: 5px;
+  &__btn {
+    font-size: 12px;
+    line-height: 15px;
+    width: 30px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    background-color: $button-gray;
+    border-radius: 6px;
+    &--selected {
+      background-color: $black;
+      color: $white;
+    }
+  }
 }
 
-.purchase__total-prices {
-  margin-left: 30px;
+.color-list {
+  &__input {
+    &:after {
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      top: -2px;
+      left: -1px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+    }
+
+    &:checked:after {
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      top: -2px;
+      left: -1px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      border: 2px solid $white;
+      visibility: visible;
+    }
+
+    &--black {
+      :after {
+        background-color: $black;
+      }
+
+      &:checked:after {
+        background-color: $black;
+        outline: 1px solid $black;
+      }
+    }
+
+    &--brown {
+      :after {
+        background-color: $brown;
+      }
+
+      &:checked:after {
+        background-color: $brown;
+        outline: 1px solid $brown;
+      }
+    }
+
+    &--blue {
+      :after {
+        background-color: $blue;
+      }
+
+      &:checked:after {
+        background-color: $blue;
+        outline: 1px solid $blue;
+      }
+    }
+
+  }
 }
 
-.purchase__remove-btn {
-  margin-left: 10px;
+.prices {
+  &__item {
+    margin: 0;
+    &--line-through { //TODO подумать над названием
+      text-decoration: line-through;
+      color: $light-gray;
+      font-size: 12px;
+      line-height: 15px;
+    }
+    &--bold { //TODO подумать над названием
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+  }
+}
+
+.amount {
+  display: flex;
+  height: 42px;
+
+  &__btn {
+    &-add {
+      padding-left: 20px;
+      padding-right: 20px;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      background-color: $button-gray;
+    }
+    &-remove {
+      padding-left: 20px;
+      padding-right: 20px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      background-color: $button-gray;
+    }
+  }
+
+  &__input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    appearance: none;
+    font-size: 16px;
+    line-height: 21px;
+    background-color: $button-gray;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+    }
+  }
+}
+
+.total-prices {
+  &__item {
+    margin: 0;
+    &--line-through {
+      text-decoration: line-through;
+      color: $light-gray;
+      font-size: 12px;
+      line-height: 15px;
+    }
+    &--bold {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+  }
+}
+
+.block-empty {
+  background-color: $button-gray;
+  padding: 15.5px 25px;
+  justify-content: space-between;
+  .purchase__restore-btn {
+    margin-right: auto;
+  }
+}
+
+.text {
+  margin: 0 25px 0 0;
+  font-size: 16px;
+  line-height: 21px;
+  color: $light-gray;
+  &__name {
+    font-weight: 700;
+  }
+}
+
+.contacts {
+  &__title {
+    font-size: 28px;
+    line-height: 30px;
+    padding-bottom: 10px;
+  }
+}
+
+.payments {
+  &__title {
+    font-size: 28px;
+    line-height: 30px;
+    padding-bottom: 10px;
+  }
+}
+
+.comment {
+  &__title {
+    font-size: 28px;
+    line-height: 30px;
+    padding-bottom: 10px;
+  }
+}
+
+
+.user-form {
+  padding-bottom: 40px;
+  &__group-inputs {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__input {
+    margin-top: 20px;
+    display: block;
+    width: 50%;
+    border: 1px solid $light-gray;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 15px 20px;
+    &--full {
+      width: 100%;
+    }
+  }
+}
+
+.payments {
+  &__payment-list {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.payment-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment__item {
+  font-size: 16px;
+  line-height: 21px;
+  padding-bottom: 20px;
+}
+
+.payment__radio {
+  padding-right: 10px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment__textarea {
+  height: 140px;
+  padding: 15px 20px;
+  border: 1px solid $light-gray;
+  margin-top: 20px;
+  resize: none;
+}
+
+.comment__info {
+  margin: 0;
+  padding-top: 4px;
+  color: $light-gray;
+  font-size: 12px;
+  line-height: 15px;
+  padding-left: 20px;
+}
+
+//bill
+.bill > {
+  div {
+    border: 1px solid $light-gray;
+    padding: 30px 20px;
+  }
+}
+
+//fix footer
+.wrapper {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.footer {
+  flex-shrink: 0;
 }

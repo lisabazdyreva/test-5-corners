@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>Logo - онлайн-магазин</title>
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -39,30 +40,32 @@
     </svg>
   </div>
   <div class="wrapper">
-    <header class="header">
-      <div class="container">
 
-        <nav class="header__main-nav main-nav">
+    <header class="header">
+      <div class="container header__container">
+
+        <nav class="main-nav header__main-nav">
+
           <ul class="main-nav__list">
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">
+              <a class="link main-nav__link" href="#">
                 Каталог
               </a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">
+              <a class="link main-nav__link" href="#">
                 О компании
               </a>
             </li>
             <li class="main-nav__item">
-              <a class="main-nav__link" href="#">
+              <a class="link main-nav__link" href="#">
                 Магазины
               </a>
             </li>
           </ul>
         </nav>
 
-        <div class="header__logo logo">
+        <div class="logo header__logo">
           <a class="logo__link" href="#" aria-label="Переход на главную страницу">
             <svg width="100" height="22" aria-hidden="true" class="logo__img">
               <use xlink:href="#logo"></use>
@@ -70,12 +73,12 @@
           </a>
         </div>
 
-        <div class="header__user-nav user-nav">
+        <div class="user-nav header__user-nav">
 
           <ul class="user-nav__list">
 
             <li class="user-nav__item">
-              <button type="button" class="user-nav__button" aria-label="Кнопка поиск по сайту">
+              <button type="button" class="btn user-nav__search-button" aria-label="Кнопка поиск по сайту">
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#search-icon"></use>
                 </svg>
@@ -83,7 +86,7 @@
               </button>
             </li>
             <li class="user-nav__item">
-              <a class="user-nav__link" href="#">
+              <a class="link user-nav__link" href="#">
                 <span class="visually-hidden">Личный кабинет</span>
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#account-icon"></use>
@@ -91,7 +94,7 @@
               </a>
             </li>
             <li class="user-nav__item">
-              <a class="user-nav__link" href="#">
+              <a class="link user-nav__link" href="#">
                 <span class="visually-hidden">Избранное</span>
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#favorite-icon"></use>
@@ -99,7 +102,7 @@
               </a>
             </li>
             <li class="user-nav__item">
-              <a class="user-nav__link" href="#">
+              <a class="link user-nav__link" href="#">
                 <span class="visually-hidden">Корзина</span>
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#cart-icon"></use>
@@ -113,264 +116,406 @@
     </header>
 
     <main class="main">
-      <div class="container">
+<!--      <div class="container main__container">-->
+<!--        <div class="main__breadcrumbs breadcrumbs">-->
+<!--          <h2 class="visually-hidden">Навигация хлебные крошки</h2>-->
+<!--          <ul class="breadcrumbs__list">-->
+<!--            <li class="breadcrumbs__item">-->
+<!--              <a class="link breadcrumbs__link" href="#">Главная</a>-->
+<!--            </li>-->
+<!--            <li class="breadcrumbs__item">-->
+<!--              <span class="breadcrumbs__link">/</span>-->
+<!--            </li>-->
+<!--            <li class="breadcrumbs__item">-->
+<!--              <span class="breadcrumbs__link breadcrumbs__link&#45;&#45;active">Оформление заказа</span>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
 
-        <h2 class="visually-hidden">Навигация хлебные крошки</h2>
+<!--        <div class="main__content content">-->
+<!--          <div class="content__cart cart">-->
 
-        <div class="main__breadcrumbs breadcrumbs">
-          <ul class="breadcrumbs__list">
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="#">Главная</a>
-            </li>
-            <li class="breadcrumbs__item">
-              <span class="breadcrumbs__link">/</span>
-            </li>
-            <li class="breadcrumbs__item">
-              <span class="breadcrumbs__link breadcrumbs__link--active">Оформление заказа</span>
-            </li>
-          </ul>
-        </div>
+<!--            <div class="cart__heading heading">-->
+<!--              <h1 class="title heading__title">Оформление заказа</h1>-->
+<!--              <div class="heading__account">-->
+<!--                Есть аккаунт?-->
+<!--                <a class="link heading__link" href="#">-->
+<!--                  Войти-->
+<!--                </a>-->
+<!--              </div>-->
+<!--            </div>-->
 
 
-        <div class="main__heading heading">
-          <h1 class="title heading__title">Оформление заказа</h1>
-          <div class="heading__account">
-            Есть аккаунт?
-            <a class="heading__link" href="#">Войти</a>
-          </div>
-        </div>
+<!--            <h2 class="title cart__title">3 товара на сумму 25 000&nbsp;₽</h2>-->
+<!--            <h3 class="visually-hidden">Список товаров в корзине</h3>-->
 
+<!--            <div class="cart__purchases purchases">-->
+<!--              <ul class="purchases__list">-->
+<!--                <li class="purchases__item purchase">-->
 
-        <div class="main__content">
-          <div class="main__content-cart cart">
-            <h2 class="title cart__title">3 товара на сумму 25 000Р</h2>
-            <h3 class="visually-hidden">Список товаров в корзине</h3>
-            <div class="cart__purchases purchases">
-              <ul class="purchases__list">
-                <li class="purchases__item">
-                  <div class="purchase">
-                    <img class="purchase__img" width="130" height="160" alt="" src="#"/>
+<!--                  <div class="purchase__block">-->
+<!--                    <img class="purchase__img" width="130" height="160" alt="" src="#"/>-->
 
-                    <div class="purchase__description">
-                      <p class="purchase__name">Утепленная стеганная куртка женская Top Hills</p>
-                      <p class="purchase__unicode"><span class="purchase__unicode--gray">Артикул</span> 512-05</p>
-                      <p class="purchase__property"><span class="purchase__property--gray">Сезон</span> Осень-зима</p>
+<!--                    <div class="purchase__description description">-->
+<!--                      <p class="description__name">Утепленная <br/> стеганная куртка <br/> женская Top Hills</p>-->
+<!--                      <p class="description__unicode">-->
+<!--                        <span class="description__subtitle">Артикул</span> 512-05-->
+<!--                      </p>-->
+<!--                      <p class="description__property">-->
+<!--                        <span class="description__subtitle">Сезон</span> Осень-зима-->
+<!--                      </p>-->
 
-                      <ul class="purchase__size-list">
-                        <li class="purchase__size-item">
-                          <button class="btn purchase__size-button" type="button">XS</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn purchase__size-button" type="button">S</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn purchase__size-button" type="button">M</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn purchase__size-button" type="button">L</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn purchase__size-button" type="button">XL</button>
-                        </li>
-                      </ul>
+<!--                      <ul class="description__size-list size-list"> &lt;!&ndash;может тоже в input?&ndash;&gt;-->
+<!--                        <li class="size-list__item">-->
+<!--                          <button class="btn size-list__btn" type="button">XS</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn" type="button">S</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn size-list__btn&#45;&#45;selected" type="button">M</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn" type="button">L</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn" type="button">XL</button>-->
+<!--                        </li>-->
+<!--                      </ul>-->
 
-                      <ul class="purchase__color-list">
-                        <li class="purchase__color-item">
-                          <button class="btn purchase__color-btn" type="button">Black</button>
-                        </li>
-                        <li class="purchase__color-item">
-                          <button class="btn purchase__color-btn" type="button">Blue</button>
-                        </li>
-                        <li class="purchase__color-item">
-                          <button class="btn purchase__color-btn" type="button">Orange</button>
-                        </li>
-                      </ul>
-                    </div>
+<!--                      <div class="description__color-list color-list">-->
+<!--                        <input type="radio" name="color" value="Black" aria-label="Black color" checked class="color-list__input color-list__input&#45;&#45;black"/>-->
+<!--                        <input type="radio" name="color" value="Blue" aria-label="Blue color" class="color-list__input color-list__input&#45;&#45;blue"/>-->
+<!--                        <input type="radio" name="color" value="Brown" aria-label="Brown color" class="color-list__input color-list__input&#45;&#45;brown"/>-->
+<!--                      </div>-->
 
-                    <div class="purchase__prices">
-                      <p class="purchase__prices--line-through">12 000P</p>
-                      <p class="purchase__prices--bold">10 000P</p>
-                    </div>
+<!--&lt;!&ndash;                      <ul class="description__color-list color-list">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="color-list__item">&ndash;&gt;-->
+<!--&lt;!&ndash;                          <button class="btn color-list__btn" type="button">Black</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="color-list__item">&ndash;&gt;-->
+<!--&lt;!&ndash;                          <button class="btn color-list__btn" type="button">Blue</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="color-list__item">&ndash;&gt;-->
+<!--&lt;!&ndash;                          <button class="btn color-list__btn" type="button">Orange</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                      </ul>&ndash;&gt;-->
+<!--                    </div>-->
 
-                    <div class="purchase__amount amount">
-                      <button class="btn amount__btn-remove" type="button">-</button>
+<!--                    <div class="purchase__prices prices">-->
+<!--                      <p class="prices__item prices__item&#45;&#45;line-through">12&nbsp;000&nbsp;₽</p>-->
+<!--                      <p class="prices__item prices__item&#45;&#45;bold">10&nbsp;000&nbsp;₽</p>-->
+<!--                    </div>-->
 
-                      <label class="visually-hidden" for="counter__2"></label>
-                      <input class="amount__input" id="counter__2" type="number" value="2"/>
+<!--                    <div class="purchase__amount amount">-->
+<!--                      <button class="btn amount__btn-remove" type="button">-</button>-->
 
-                      <button class="btn amount__btn-add" type="button">+</button>
-                    </div>
+<!--                      <label class="visually-hidden" for="counter__2"></label>-->
+<!--                      <input class="amount__input" id="counter__2" type="number" value="2"/>-->
 
-                    <div class="purchase__total-prices total-prices">
-                      <p class="total-prices--line-through">24 000P</p>
-                      <p class="total-prices--bold">20 000P</p>
-                    </div>
+<!--                      <button class="btn amount__btn-add" type="button">+</button>-->
+<!--                    </div>-->
 
-                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок">
-                      <img width="22" height="22" alt="Удалить" src="#">
-                    </button>
-                  </div>
-                </li>
+<!--                    <div class="purchase__total-prices total-prices">-->
+<!--                      <p class="total-prices__item total-prices__item&#45;&#45;line-through">24 000&nbsp;₽</p>-->
+<!--                      <p class="total-prices__item total-prices__item&#45;&#45;bold">20 000&nbsp;₽</p>-->
+<!--                    </div>-->
 
-                <li>
-                  <p>Товар Наименование товара был удален из корзины. </p>
-                  <button type="button">Восстановить</button>
-                  <button type="button">Close</button>
-                </li>
+<!--                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок">-->
+<!--                      <img class="purchase__remove-icon" width="22" height="22" alt="" title="Удалить товар" src="#">-->
+<!--                    </button>-->
+<!--                  </div>-->
+<!--                </li>-->
 
-                <li class="perches__item">
-                  <div class="item">
-                    <img alt=""/>
-                    <div>
-                      <p>Вязанная шапка Zolla</p>
-                      <p>Артикул 891-256</p>
-                      <p>Сезон Демисезон</p>
-                      <div>
-                        <button type="button">XS</button>
-                        <button type="button">S</button>
-                        <button type="button">M</button>
-                        <button type="button" disabled>L</button>
-                        <button type="button" disabled>XL</button>
-                      </div>
+<!--                <li class="purchases__item purchase">-->
+<!--                  <div class="purchase__block block-empty">-->
 
-                      <div>
-                        <button type="button">Black</button>
-                      </div>
-                    </div>
+<!--                    <p class="block-empty__text text">Товар-->
+<!--                      <span class="text__name">Наименование товара</span> был удален из корзины.-->
+<!--                    </p>-->
 
-                    <div>
-                      <p>500P</p>
-                    </div>
+<!--                    <button type="button" class="btn purchase__restore-btn" aria-label="Восстановить товар в списке покупок">Восстановить</button>-->
+<!--                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок">-->
+<!--                      <img class="purchase__remove-icon" width="22" height="22" alt="" title="Удалить товар" src="#">-->
+<!--                    </button>-->
+<!--                  </div>-->
+<!--                </li>-->
 
-                    <div>
-                      <button type="button" disabled>-</button>
-                      <label class="visually-hidden" for="counter"></label>
-                      <input id="counter" type="number" value="1"/>
-                      <!--              <button type="button">1</button>-->
-                      <button type="button">+</button>
-                    </div>
+<!--                <li class="purchases__item purchase">-->
+<!--                  <div class="purchase__block">-->
+<!--                    <img class="purchase__img" width="130" height="160" alt="" src="#"/>-->
 
-                    <div>
-                      <p>500P</p>
-                    </div>
+<!--                    <div class="purchase__description description">-->
+<!--                      <p class="description__name">Вязанная шапка Zolla</p>-->
+<!--                      <p class="description__unicode">-->
+<!--                        <span class="description__subtitle">Артикул</span> 891-256-->
+<!--                      </p>-->
+<!--                      <p class="description__property">-->
+<!--                        <span class="description__subtitle">Сезон</span> Демисезон-->
+<!--                      </p>-->
 
-                    <button type="button">Close</button>
-                  </div>
-                </li>
-              </ul>
+<!--                      <ul class="description__size-list size-list"> &lt;!&ndash;может тоже в input?&ndash;&gt;-->
+<!--                        <li class="size-list__item">-->
+<!--                          <button class="btn size-list__btn" type="button">XS</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn size-list__btn&#45;&#45;selected" type="button">S</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn " type="button">M</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn" type="button" disabled>L</button>-->
+<!--                        </li>-->
+<!--                        <li class="purchase__size-item">-->
+<!--                          <button class="btn size-list__btn" type="button" disabled>XL</button>-->
+<!--                        </li>-->
+<!--                      </ul>-->
 
-            </div>
-            <h2 class="visually-hidden">Форма обратной связи</h2>
+<!--                      <div class="description__color-list color-list">-->
+<!--                        <input type="radio" name="color" value="Black" aria-label="Black color" checked class="color-list__input color-list__input&#45;&#45;black"/>-->
+<!--                      </div>-->
 
-            <div>
-              <h3>Контактные данные</h3>
-              <form>
+<!--                      &lt;!&ndash;                      <ul class="description__color-list color-list">&ndash;&gt;-->
+<!--                      &lt;!&ndash;                        <li class="color-list__item">&ndash;&gt;-->
+<!--                      &lt;!&ndash;                          <button class="btn color-list__btn" type="button">Black</button>&ndash;&gt;-->
+<!--                      &lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--                      &lt;!&ndash;                        <li class="color-list__item">&ndash;&gt;-->
+<!--                      &lt;!&ndash;                          <button class="btn color-list__btn" type="button">Blue</button>&ndash;&gt;-->
+<!--                      &lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--                      &lt;!&ndash;                        <li class="color-list__item">&ndash;&gt;-->
+<!--                      &lt;!&ndash;                          <button class="btn color-list__btn" type="button">Orange</button>&ndash;&gt;-->
+<!--                      &lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--                      &lt;!&ndash;                      </ul>&ndash;&gt;-->
+<!--                    </div>-->
 
-                <fieldset>
-                  <label for="name">Имя</label>
-                  <input id="name" type="text" placeholder="Имя" value="Александр"/>
+<!--                    <div class="purchase__prices prices">-->
+<!--                      <p class="prices__item prices__item&#45;&#45;bold">500&nbsp;₽</p>-->
+<!--                    </div>-->
 
-                  <label for="surname" class="visually-hidden">Фамилия</label>
-                  <input id="surname" type="text" placeholder="Фамилия"/>
-                </fieldset>
+<!--                    <div class="purchase__amount amount">-->
+<!--                      <button class="btn amount__btn-remove" type="button" disabled>-</button>-->
 
-                <fieldset>
-                  <label for="phone" class="visually-hidden">Номер телефона</label>
-                  <input id="phone" type="tel" placeholder="Телефон"/>
+<!--                      <label class="visually-hidden" for="counter__1"></label>-->
+<!--                      <input class="amount__input" id="counter__1" type="number" value="1"/>-->
 
-                  <label for="email" class="visually-hidden">Адрес электронной почты</label>
-                  <input id="email" type="email" placeholder="Email"/>
-                </fieldset>
-
-                <label for="address">Адрес доставки</label>
-                <input id="address" type="text" placeholder="Адрес доставки" value="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" />
-              </form>
-
-              <h3>Оплата</h3>
-
-              <label for="cash">Наличными курьеру</label>
-              <input id="cash" type="radio" name="payment"/>
-              <label for="card__courier">Картой курьеру</label>
-              <input id="card__courier" type="radio" name="payment"/>
-              <label for="card__online">Картой онлайн</label>
-              <input id="card__online" type="radio" name="payment"/>
-
-              <h3>Комментарий к заказу</h3>
-
-              <label class="visually hidden" for="comment">Оставьте в поле комментарий к заказу или оставьте пустым</label>
-              <textarea id="comment" maxlength="142">Комментарий к заказу</textarea>
-              <p>Использовано 0/142 символов</p>
-            </div>
-          </div>
+<!--                      <button class="btn amount__btn-add" type="button">+</button>-->
+<!--                    </div>-->
 
 
 
-          <aside class="main__content-bill bill">
+<!--                    <div class="purchase__total-prices total-prices">-->
+<!--                      <p class="total-prices__item total-prices__item&#45;&#45;bold">500&nbsp;₽</p>-->
+<!--                    </div>-->
 
-            <div>
-              <table>
-                <thead></thead>
-                <tbody>
-                <tr>
-                  <td>Товары</td>
-                  <td>24 500Р</td>
-                </tr>
-                <tr>
-                  <td>Скидка</td>
-                  <td>- 4 500Р</td>
-                </tr>
-                <tr>
-                  <td>Акции</td>
-                  <td>- 4 000Р</td>
-                </tr>
-                <tr>
-                  <td>Промокод</td>
-                  <td>- 500Р</td>
-                </tr>
-                <tr>
-                  <td>Доставка</td>
-                  <td>200Р</td>
-                </tr>
-                </tbody>
-              </table>
-
-              <div>
-                <p>Получить товар со склада</p>
-                <p>Сроки получения могут измениться</p>
-                <button type="button">Переключить</button>
-              </div>
-
-              <h2 class="visually-hidden">Итоговая цена со скидками</h2>
-              <h3>Итого: <span>20 700P</span></h3>
-
-              <label for="promo_code" class="visually-hidden">Поле для введения промокода</label>
-              <input id="promo_code" type="text" placeholder="Введите прокод"/>
-
-              <button type="submit">Оформить заказ</button>
-              <p>Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>
-            </div>
-
-            <div>
-              <img alt="" src="#"/>
-            </div>
-
-          </aside>
-
-        </div>
+<!--                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок">-->
+<!--                      <img class="purchase__remove-icon" width="22" height="22" alt="" title="Удалить товар" src="#">-->
+<!--                    </button>-->
+<!--                  </div>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
 
 
+<!--            <div class="cart__contacts contacts">-->
+<!--              <h2 class="visually-hidden">Форма обратной связи</h2>-->
+<!--              <h3 class="title contacts__title">Контактные данные</h3>-->
 
+<!--              <form class="contacts__user-form user-form">-->
+<!--                <fieldset class="user-form__group-inputs">-->
+<!--                  <label for="name" class="visually-hidden">Имя</label>-->
+<!--                  <input id="name" type="text" placeholder="Имя" value="Александр" class="user-form__input"/>-->
 
+<!--                  <label for="surname" class="visually-hidden">Фамилия</label>-->
+<!--                  <input id="surname" type="text" placeholder="Фамилия" class="user-form__input"/>-->
+<!--                </fieldset>-->
 
-      </div>
+<!--                <fieldset class="user-form__group-inputs">-->
+<!--                  <label for="phone" class="visually-hidden">Номер телефона</label>-->
+<!--                  <input id="phone" type="tel" placeholder="Телефон" class="user-form__input"/>-->
 
+<!--                  <label for="email" class="visually-hidden">Адрес электронной почты</label>-->
+<!--                  <input id="email" type="email" placeholder="Email" class="user-form__input"/>-->
+<!--                </fieldset>-->
 
+<!--                <fieldset class="user-form__group-inputs">-->
+<!--                  <label for="address" class="visually-hidden">Адрес доставки</label>-->
+<!--                  <input id="address" type="search" placeholder="Адрес доставки" value="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" class="user-form__input user-form__input&#45;&#45;full"/>-->
+<!--                </fieldset>-->
+<!--              </form>-->
+<!--            </div>-->
 
+<!--            <div class="cart__payments payments">-->
+<!--              <h3 class="title payments__title">Оплата</h3>-->
+<!--              <div class="payments__payment-list payment-list">-->
+<!--                <label for="cash" class="payment__item">-->
+<!--                  <input id="cash" type="radio" name="payment" class="payment__radio" checked/>-->
+<!--                  Наличными курьеру-->
+<!--                </label>-->
+
+<!--                <label for="card__courier" class="payment__item">-->
+<!--                  <input id="card__courier" type="radio" name="payment" class="payment__radio"/>-->
+<!--                  Картой курьеру-->
+<!--                </label>-->
+
+<!--                <label for="card__online" class="payment__item">-->
+<!--                  <input id="card__online" type="radio" name="payment" class="payment__radio"/>-->
+<!--                  Картой онлайн-->
+<!--                </label>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div class="cart__comment comment">-->
+<!--              <h3 class="title comment__title">Комментарий к заказу</h3>-->
+<!--              <label class="visually-hidden" for="comment">Оставьте в поле комментарий к заказу или оставьте пустым</label>-->
+<!--              <textarea id="comment" maxlength="142" class="comment__textarea">Комментарий к заказу</textarea>-->
+<!--              <p class="comment__info">Использовано 0/142 символов</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <aside class="content__bill bill">-->
+
+<!--            <div>-->
+<!--              <table>-->
+<!--                <thead></thead>-->
+<!--                <tbody>-->
+<!--                <tr>-->
+<!--                  <td>Товары</td>-->
+<!--                  <td>24 500Р</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                  <td>Скидка</td>-->
+<!--                  <td>- 4 500Р</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                  <td>Акции</td>-->
+<!--                  <td>- 4 000Р</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                  <td>Промокод</td>-->
+<!--                  <td>- 500Р</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                  <td>Доставка</td>-->
+<!--                  <td>200Р</td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--              </table>-->
+
+<!--              <div>-->
+<!--                <p>Получить товар со склада</p>-->
+<!--                <p>Сроки получения могут измениться</p>-->
+<!--                <button type="button">Переключить</button>-->
+<!--              </div>-->
+
+<!--              <h2 class="visually-hidden">Итоговая цена со скидками</h2>-->
+<!--              <h3>Итого: <span>20 700P</span></h3>-->
+
+<!--              <label for="promo_code" class="visually-hidden">Поле для введения промокода</label>-->
+<!--              <input id="promo_code" type="text" placeholder="Введите прокод"/>-->
+
+<!--              <button type="submit">Оформить заказ</button>-->
+<!--              <p>Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--              <img alt="" src="#"/>-->
+<!--            </div>-->
+
+<!--          </aside>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
 
     </main>
 
 
-    <footer></footer>
+    <footer class="footer">
+
+      <div class="footer__container container">
+        <div class="footer__subscribe subscribe">
+          <h3 class="title footer__title">Скидка 10% за подписку на наши новости</h3>
+
+          <label class="visually-hidden" for="subscribe"> Email:</label>
+          <input id="subscribe" type="email" class="subscribe__input"/>
+
+          <button type="submit" class="subscribe__subscribe-btn">
+            Подписаться
+          </button>
+
+          <p class="subscribe__text">
+            Нажимая кнопку “Подписаться”, Вы соглашаетесь с политикой конфиденциальности
+          </p>
+        </div>
+
+        <div class="footer__navs navs">
+
+          <ul class="navs__menu-nav menu-nav__list">
+            <li class="menu-nav__item">
+              <a class="link menu-nav__link" href="#">Каталог</a>
+            </li>
+            <li class="menu-nav__item">
+              <a class="link menu-nav__link" href="#">О компании</a>
+            </li>
+            <li class="menu-nav__item">
+              <a class="link menu-nav__link" href="#">Магазины</a>
+            </li>
+            <li class="menu-nav__item">
+              <a class="link menu-nav__link" href="#">Новости</a>
+            </li>
+          </ul>
+
+          <ul class="navs__info-nav info-nav__list">
+            <li class="info-nav__item">
+              <a class="link info-nav__link" href="#">Оплата и доставка</a>
+            </li>
+            <li class="info-nav__item">
+              <a class="link info-nav__link" href="#">Условия возврата</a>
+            </li>
+            <li class="info-nav__item">
+              <a class="link info-nav__link" href="#">Бонусная система</a>
+            </li>
+            <li class="info-nav__item">
+              <a class="link info-nav__link" href="#">Подарочный сертификат</a>
+            </li>
+          </ul>
+
+          <ul class="navs__socials-nav socials-nav__list">
+            <li class="socials-nav__item">
+              <a class="link socials-nav__link" href="#">Telegram</a>
+            </li>
+            <li class="socials-nav__item">
+              <a class="link socials-nav__link" href="#">WhatsApp</a>
+            </li>
+            <li class="socials-nav__item">
+              <a class="link socials-nav__link" href="#">Youtube</a>
+            </li>
+            <li class="socials-nav__item">
+              <a class="link socials-nav__link" href="#">VK</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="footer__container-info container-info">
+
+        <p class="container-info__text">© All rights reserved</p>
+        <p class="container-info__text">
+          <a class="link container-info__link" href="#">Публичная оферта</a>
+        </p>
+        <p class="container-info__text">
+          <a class="link container-info__link" href="#">Политика конфиденциальности</a>
+        </p>
+        <p class="container-info__text">
+          Сделано в студии
+          <img width="21" height="21" alt="" src="#"/>
+          5 УГЛОВ
+        </p>
+      </div>
+
+    </footer>
   </div>
 
 </body>
