@@ -935,6 +935,7 @@ html {
     color: $light-gray;
     font-size: 14px;
     line-height: 18px;
+    margin: 0;
   }
   &__link {
     color: $light-gray;
@@ -943,6 +944,7 @@ html {
 }
 
 .form-subscription {
+  padding-top: 30px;
   &__container {
     width: 100%;
     position: relative;
@@ -955,7 +957,7 @@ html {
     border: 1px solid $light-gray;
     font-size: 16px;
     line-height: 21px;
-    padding: 15px 20px;
+    padding: 15px 165px 15px 20px;
 
     &::placeholder {
       color: transparent;
@@ -999,6 +1001,18 @@ html {
     -moz-transition: 0.3s ease all;
     -webkit-transition: 0.3s ease all;
     pointer-events: none;
+  }
+
+  &__btn {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 20px;
+    display: flex;
+    gap: 10px;
   }
 }
 

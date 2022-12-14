@@ -474,11 +474,14 @@
             <div class="form-subscription__container">
               <input id="subscribe-input" type="email" class="form-subscription__input" value="example@mail.ru" placeholder="example@mail.ru" required/>
               <label class="form-subscription__label" for="subscribe-input"> Адрес электронной почты</label>
+              <button type="submit" class="btn form-subscription__btn">
+                <svg width="20" height="20" aria-hidden="true" class="form-subscription__icon">
+                  <use xlink:href="#search-icon"></use>
+                </svg>
+                <span class="visually-hidden">Поиск</span> <!--доступность -->
+                Подписаться
+              </button>
             </div>
-
-            <button type="submit" class="btn form-subscription__btn">
-              Подписаться
-            </button>
           </form>
 
           <p class="subscription__text">

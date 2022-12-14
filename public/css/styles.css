@@ -806,12 +806,16 @@ html {
   color: #6E6E6E;
   font-size: 14px;
   line-height: 18px;
+  margin: 0;
 }
 .subscription__link {
   color: #6E6E6E;
   text-decoration: underline;
 }
 
+.form-subscription {
+  padding-top: 30px;
+}
 .form-subscription__container {
   width: 100%;
   position: relative;
@@ -823,7 +827,7 @@ html {
   border: 1px solid #6E6E6E;
   font-size: 16px;
   line-height: 21px;
-  padding: 15px 20px;
+  padding: 15px 165px 15px 20px;
 }
 .form-subscription__input::placeholder {
   color: transparent;
@@ -861,6 +865,17 @@ html {
   -moz-transition: 0.3s ease all;
   -webkit-transition: 0.3s ease all;
   pointer-events: none;
+}
+.form-subscription__btn {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 20px;
+  display: flex;
+  gap: 10px;
 }
 
 .navs {
