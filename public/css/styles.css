@@ -27,6 +27,7 @@ html {
   font-size: 14px;
   line-height: 18px;
   color: #000000;
+  cursor: default;
 }
 
 .title {
@@ -268,6 +269,10 @@ html {
   background-color: #000000;
   color: #FFFFFF;
 }
+.size-list__input:disabled ~ .size-list__letter {
+  color: #C8C8C8;
+  cursor: not-allowed;
+}
 .size-list__letter {
   font-size: 12px;
   line-height: 15px;
@@ -411,27 +416,89 @@ html {
   padding-bottom: 10px;
 }
 
-.user-form {
+.contacts__user-form {
   padding-bottom: 40px;
+  padding-top: 20px;
 }
-.user-form__group-inputs {
+
+.user-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+.user-form__group {
+  display: flex;
+  width: 100%;
   border: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  gap: 20px;
+  justify-content: space-between;
 }
 .user-form__input {
-  margin-top: 20px;
-  display: block;
-  width: 50%;
-  border: 1px solid #6E6E6E;
+  box-sizing: border-box;
   font-size: 16px;
   line-height: 21px;
-  padding: 15px 20px;
+  padding: 14px 20px;
+  border: 1px solid #6E6E6E;
+  max-width: 370px;
+  width: 100%;
+}
+.user-form__input::placeholder {
+  color: transparent;
+}
+.user-form__input:focus {
+  outline: none;
+}
+.user-form__input:focus + .user-form__label {
+  font-size: 12px;
+  line-height: 15px;
+  color: #6E6E6E;
+  background-color: #FFFFFF;
+  padding: 4px 2px;
+  left: 16px;
+  top: -11px;
+}
+.user-form__input:valid + .user-form__label {
+  font-size: 12px;
+  line-height: 15px;
+  color: #6E6E6E;
+  background-color: #FFFFFF;
+  padding: 4px 2px;
+  left: 16px;
+  top: -11px;
 }
 .user-form__input--full {
+  max-width: 760px;
+}
+.user-form__label {
+  font-size: 16px;
+  line-height: 21px;
+  color: #6E6E6E;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 14px 20px;
+  transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+  pointer-events: none;
+}
+.user-form__container {
   width: 100%;
+  position: relative;
+}
+.user-form__container:nth-child(2n) {
+  text-align: end;
+}
+.user-form__container:nth-child(2n) .user-form__input:focus + .user-form__label {
+  left: 26px;
+}
+.user-form__container:nth-child(2n) .user-form__input:valid + .user-form__label {
+  left: 26px;
+}
+.user-form__container:nth-child(2n) .user-form__label {
+  left: 10px;
 }
 
 .payments__payment-list {
@@ -489,6 +556,7 @@ html {
 .prices-table {
   width: 100%;
   border-bottom: 0.5px solid #C8C8C8;
+  cursor: default;
 }
 .prices-table td {
   padding: 0;

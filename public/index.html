@@ -152,7 +152,7 @@
             <div class="purchases cart__purchases">
 
               <ul class="list purchases__list">
-                <li class="purchase purchases__item">
+                <li class="purchase first-cart-item purchases__item">
 
                   <div class="purchase__block">
                     <img class="purchase__img" width="130" height="160" alt="" title="" src="#"/>
@@ -166,33 +166,33 @@
                         <span class="description__subtitle">Сезон</span> Осень-зима
                       </p>
 
-                      <div class="size-list description__size-list"> <!--центрирование отрегулировать -->
+                      <div class="size-list description__size-list">
                         <label class="size-list__label">
-                          <input type="radio" name="size" value="xs" aria-label="XS size" class="size-list__input"/>
+                          <input type="radio" name="size-first-cart-item" value="xs" aria-label="XS size" class="size-list__input"/>
                           <span class="size-list__letter size-list__letter--two-signs">XS</span>
                         </label>
                         <label class="size-list__label">
-                          <input type="radio" name="size" value="s" aria-label="S size" class="size-list__input"/>
+                          <input type="radio" name="size-first-cart-item" value="s" aria-label="S size" class="size-list__input"/>
                           <span class="size-list__letter size-list__letter--one-sign">S</span>
                         </label>
                         <label class="size-list__label">
-                          <input type="radio" name="size" value="m" aria-label="M size" class="size-list__input" checked/>
+                          <input type="radio" name="size-first-cart-item" value="m" aria-label="M size" class="size-list__input" checked/>
                           <span class="size-list__letter size-list__letter--one-sign">M</span>
                         </label>
                         <label class="size-list__label">
-                          <input type="radio" name="size" value="l" aria-label="L size" class="size-list__input"/>
+                          <input type="radio" name="size-first-cart-item" value="l" aria-label="L size" class="size-list__input"/>
                           <span class="size-list__letter size-list__letter--one-sign">L</span>
                         </label>
                         <label class="size-list__label">
-                          <input type="radio" name="size" value="xl" aria-label="XL size" class="size-list__input"/>
+                          <input type="radio" name="size-first-cart-item" value="xl" aria-label="XL size" class="size-list__input"/>
                           <span class="size-list__letter size-list__letter--two-signs">XL</span>
                         </label>
                       </div>
 
                       <div class="color-list description__color-list">
-                        <input type="radio" name="color" value="black" aria-label="Black color" class="color-list__input color-list__input--black" checked/>
-                        <input type="radio" name="color" value="blue" aria-label="Blue color" class="color-list__input color-list__input--blue"/>
-                        <input type="radio" name="color" value="brown" aria-label="Brown color" class="color-list__input color-list__input--brown"/>
+                        <input type="radio" name="color-first-cart-item" value="black" aria-label="Black color" class="color-list__input color-list__input--black" checked/>
+                        <input type="radio" name="color-first-cart-item" value="blue" aria-label="Blue color" class="color-list__input color-list__input--blue"/>
+                        <input type="radio" name="color-first-cart-item" value="brown" aria-label="Brown color" class="color-list__input color-list__input--brown"/>
                       </div>
                     </div>
 
@@ -221,7 +221,7 @@
                   </div>
                 </li>
 
-                <li class="purchases__item purchase">
+                <li class="purchases__item second-cart-item purchase">
                   <div class="purchase__block block-empty">
 
                     <p class="block-empty__text text">Товар
@@ -248,39 +248,33 @@
                         <span class="description__subtitle">Сезон</span> Демисезон
                       </p>
 
-                      <ul class="description__size-list size-list"> <!--может тоже в input?-->
-                        <li class="size-list__item">
-                          <button class="btn size-list__btn" type="button">XS</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn size-list__btn size-list__btn--selected" type="button">S</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn size-list__btn " type="button">M</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn size-list__btn" type="button" disabled>L</button>
-                        </li>
-                        <li class="purchase__size-item">
-                          <button class="btn size-list__btn" type="button" disabled>XL</button>
-                        </li>
-                      </ul>
 
-                      <div class="description__color-list color-list">
-                        <input type="radio" name="color" value="Black" aria-label="Black color" checked class="color-list__input color-list__input--black"/>
+                      <div class="size-list description__size-list">
+                        <label class="size-list__label">
+                          <input type="radio" name="size-second-cart-item" value="xs" aria-label="XS size" class="size-list__input"/>
+                          <span class="size-list__letter size-list__letter--two-signs">XS</span>
+                        </label>
+                        <label class="size-list__label">
+                          <input type="radio" name="size-second-cart-item" value="s" aria-label="S size" class="size-list__input" checked/>
+                          <span class="size-list__letter size-list__letter--one-sign">S</span>
+                        </label>
+                        <label class="size-list__label">
+                          <input type="radio" name="size-second-cart-item" value="m" aria-label="M size" class="size-list__input"/>
+                          <span class="size-list__letter size-list__letter--one-sign">M</span>
+                        </label>
+                        <label class="size-list__label">
+                          <input type="radio" name="size-second-cart-item" value="l" aria-label="L size" class="size-list__input" disabled/>
+                          <span class="size-list__letter size-list__letter--one-sign">L</span>
+                        </label>
+                        <label class="size-list__label">
+                          <input type="radio" name="size-second-cart-item" value="xl" aria-label="XL size" class="size-list__input" disabled/>
+                          <span class="size-list__letter size-list__letter--two-signs">XL</span>
+                        </label>
                       </div>
 
-                      <!--                      <ul class="description__color-list color-list">-->
-                      <!--                        <li class="color-list__item">-->
-                      <!--                          <button class="btn color-list__btn" type="button">Black</button>-->
-                      <!--                        </li>-->
-                      <!--                        <li class="color-list__item">-->
-                      <!--                          <button class="btn color-list__btn" type="button">Blue</button>-->
-                      <!--                        </li>-->
-                      <!--                        <li class="color-list__item">-->
-                      <!--                          <button class="btn color-list__btn" type="button">Orange</button>-->
-                      <!--                        </li>-->
-                      <!--                      </ul>-->
+                      <div class="description__color-list color-list">
+                        <input type="radio" name="color-second-cart-item" value="Black" aria-label="Black color" checked class="color-list__input color-list__input--black"/>
+                      </div>
                     </div>
 
                     <div class="purchase__prices prices">
@@ -316,25 +310,37 @@
               <h3 class="title contacts__title">Контактные данные</h3>
 
               <form class="contacts__user-form user-form">
-                <fieldset class="user-form__group-inputs">
-                  <label for="name" class="visually-hidden">Имя</label>
-                  <input id="name" type="text" placeholder="Имя" value="Александр" class="user-form__input"/>
 
-                  <label for="surname" class="visually-hidden">Фамилия</label>
-                  <input id="surname" type="text" placeholder="Фамилия" class="user-form__input"/>
+                <fieldset class="user-form__group">
+                  <div class="user-form__container">
+                    <input id="name" type="text" placeholder="Имя" class="user-form__input" autocomplete="off" required value="Александр"/>
+                    <label for="name" class="user-form__label">Имя</label>
+                  </div>
+
+                  <div class="user-form__container">
+                    <input id="surname" type="text" placeholder="Фамилия" class="user-form__input" autocomplete="off" required/>
+                    <label for="surname" class="user-form__label">Фамилия</label>
+                  </div>
                 </fieldset>
 
-                <fieldset class="user-form__group-inputs">
-                  <label for="phone" class="visually-hidden">Номер телефона</label>
-                  <input id="phone" type="tel" placeholder="Телефон" class="user-form__input"/>
 
-                  <label for="email" class="visually-hidden">Адрес электронной почты</label>
-                  <input id="email" type="email" placeholder="Email" class="user-form__input"/>
+                <fieldset class="user-form__group">
+                  <div class="user-form__container">
+                    <input id="phone" type="tel" placeholder="Телефон" class="user-form__input" autocomplete="off" required/>
+                    <label for="phone" class="user-form__label">Номер телефона</label>
+                  </div>
+
+                  <div class="user-form__container">
+                    <input id="email" type="email" placeholder="Email" class="user-form__input" autocomplete="off" required/>
+                    <label for="email" class="user-form__label">Адрес электронной почты</label>
+                  </div>
                 </fieldset>
 
-                <fieldset class="user-form__group-inputs">
-                  <label for="address" class="visually-hidden">Адрес доставки</label>
-                  <input id="address" type="search" placeholder="Адрес доставки" value="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" class="user-form__input user-form__input--full"/>
+                <fieldset class="user-form__group">
+                  <div class="user-form__container">
+                    <input id="address" type="search" placeholder="Адрес доставки" class="user-form__input user-form__input--full" autocomplete="off" required value="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152"/>
+                    <label for="address" class="user-form__label">Адрес доставки</label>
+                  </div>
                 </fieldset>
               </form>
             </div>

@@ -38,6 +38,7 @@ html {
   font-size: 14px;
   line-height: 18px;
   color: $black;
+  cursor: default;
 }
 
 
@@ -303,6 +304,10 @@ html {
       background-color: $black;
       color: $white;
     }
+    &:disabled ~ .size-list__letter {
+      color: $line-gray;
+      cursor: not-allowed;
+    }
   }
   &__letter {
     font-size: 12px;
@@ -474,28 +479,104 @@ html {
 }
 
 
-.user-form {
+.contacts__user-form {
   padding-bottom: 40px;
-  &__group-inputs {
+  padding-top: 20px;
+}
+
+.user-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  &__group {
+    display: flex;
+    width: 100%;
     border: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    gap: 20px;
+    justify-content: space-between;
   }
 
   &__input {
-    margin-top: 20px;
-    display: block;
-    width: 50%;
-    border: 1px solid $light-gray;
+    box-sizing: border-box;
     font-size: 16px;
     line-height: 21px;
-    padding: 15px 20px;
+    padding: 14px 20px;
+    border: 1px solid $light-gray;
+    max-width: 370px;
+    width: 100%;
+
+    &::placeholder{
+      color: transparent;
+    }
+
+    &:focus {
+      outline: none; //TODO спорное
+    }
+
+    &:focus + .user-form__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-gray;
+      background-color: $white;
+      padding: 4px 2px;
+      left: 16px;
+      top: -11px;
+    }
+
+    &:valid + .user-form__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-gray;
+      background-color: $white;
+      padding: 4px 2px;
+      left: 16px;
+      top: -11px;
+    }
+
     &--full {
-      width: 100%;
+      max-width: 760px;
     }
   }
+
+  &__label {
+    font-size: 16px;
+    line-height: 21px;
+    color: $light-gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 14px 20px;
+
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+    pointer-events: none;
+  }
+
+  &__container {
+    width: 100%;
+    position: relative;
+
+    &:nth-child(2n) {
+      text-align: end;
+
+      .user-form__input {
+        &:focus + .user-form__label {
+          left: 26px;
+        }
+
+        &:valid + .user-form__label {
+          left: 26px;
+        }
+      }
+      .user-form__label {
+        left: 10px;
+      }
+    }
+  }
+
 }
 
 .payments {
@@ -556,7 +637,7 @@ html {
 .prices-table {
   width: 100%;
   border-bottom: 0.5px solid $line-gray;
-  //padding-bottom: 20px;
+  cursor: default;
   td {
     padding: 0;
   }
