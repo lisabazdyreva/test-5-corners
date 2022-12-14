@@ -37,6 +37,11 @@
       <symbol id="cart-icon" viewBox="0 0 20 20" fill="none">
         <path d="M6.85711 4.62496C7.43524 0.73571 13.0339 0.752281 13.7143 4.62496M17.4183 6.3396L18.8334 15.4385C18.8781 15.7265 18.8595 16.0206 18.7786 16.3008C18.6978 16.581 18.5568 16.8406 18.3651 17.0618C18.1735 17.283 17.9358 17.4606 17.6684 17.5825C17.4009 17.7043 17.11 17.7676 16.8156 17.7678H3.18642C2.8918 17.7679 2.60066 17.7048 2.33295 17.5831C2.06525 17.4614 1.82731 17.2838 1.63546 17.0626C1.4436 16.8413 1.30237 16.5816 1.22143 16.3013C1.1405 16.021 1.12178 15.7267 1.16657 15.4385L2.58159 6.3396C2.65581 5.862 2.90043 5.42649 3.27114 5.11196C3.64185 4.79742 4.11414 4.62466 4.60246 4.62496H15.3995C15.8877 4.6249 16.3597 4.79778 16.7302 5.11229C17.1007 5.4268 17.3452 5.86217 17.4194 6.3396H17.4183Z" stroke="black" stroke-linejoin="round"/>
       </symbol>
+
+      <symbol id="remove-icon" viewBox="0 0 22 22" fill="none">
+        <path d="M17.5 4.5L4.5 17.5" stroke="black" stroke-width="1.5"/>
+        <path d="M4.5 4.5L17.5 17.5" stroke="black" stroke-width="1.5"/>
+      </symbol>
     </svg>
   </div>
   <div class="wrapper">
@@ -76,7 +81,7 @@
 
           <ul class="list user-nav__list">
             <li class="user-nav__item">
-              <button type="button" class="btn user-nav__search-button" aria-label="Кнопка поиск по сайту">
+              <button type="button" class="btn user-nav__search-button" aria-label="Кнопка поиск по сайту" title="Поиск по сайту">
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#search-icon"></use>
                 </svg>
@@ -84,7 +89,7 @@
               </button>
             </li>
             <li class="user-nav__item">
-              <a class="link user-nav__link" href="#">
+              <a class="link user-nav__link" href="#" title="Перейти в личный кабинет">
                 <span class="visually-hidden">Личный кабинет</span>
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#account-icon"></use>
@@ -92,7 +97,7 @@
               </a>
             </li>
             <li class="user-nav__item">
-              <a class="link user-nav__link" href="#">
+              <a class="link user-nav__link" href="#" title="Перейти в избранное">
                 <span class="visually-hidden">Избранное</span>
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#favorite-icon"></use>
@@ -100,7 +105,7 @@
               </a>
             </li>
             <li class="user-nav__item">
-              <a class="link user-nav__link" href="#">
+              <a class="link user-nav__link" href="#" title="Перейти в корзину">
                 <span class="visually-hidden">Корзина</span>
                 <svg width="20" height="20" aria-hidden="true" class="user-nav__icon">
                   <use xlink:href="#cart-icon"></use>
@@ -139,7 +144,7 @@
               <h1 class="title heading__title">Оформление заказа</h1>
               <div class="heading__account">
                 Есть аккаунт?
-                <a class="link heading__link" href="#">
+                <a class="link heading__link" href="#" aria-label="Войти в личный кабинет" title="Войти в личный кабинет">
                   Войти
                 </a>
               </div>
@@ -155,7 +160,7 @@
                 <li class="purchase first-cart-item purchases__item">
 
                   <div class="purchase__block">
-                    <img class="purchase__img" width="130" height="160" alt="" title="" src="#"/>
+                    <img class="purchase__img" width="130" height="160" alt="Женская куртка на осень и зиму" title="Женская куртка на осень и зиму" src="#"/>
 
                     <div class="description purchase__description">
                       <p class="description__name">Утепленная <br/> стеганная куртка <br/> женская Top Hills</p>
@@ -202,12 +207,12 @@
                     </div>
 
                     <div class="purchase__amount amount">
-                      <button class="btn amount__btn-remove" type="button">-</button>
+                      <button class="btn amount__btn-remove" type="button">&minus;</button>
 
                       <label class="visually-hidden" for="counter__2"></label>
                       <input class="amount__input" id="counter__2" type="number" value="2"/>
 
-                      <button class="btn amount__btn-add" type="button">+</button>
+                      <button class="btn amount__btn-add" type="button">&plus;</button>
                     </div>
 
                     <div class="purchase__total-prices total-prices">
@@ -215,8 +220,10 @@
                       <p class="total-prices__item total-prices__item--bold">20 000&nbsp;₽</p>
                     </div>
 
-                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок">
-                      <img class="purchase__remove-icon" width="22" height="22" alt="" title="Удалить товар" src="#">
+                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок" title="Удалить товар">
+                      <svg width="22" height="22" aria-hidden="true" class="purchase__remove-icon" >
+                        <use xlink:href="#remove-icon"></use>
+                      </svg>
                     </button>
                   </div>
                 </li>
@@ -229,15 +236,18 @@
                     </p>
 
                     <button type="button" class="btn purchase__restore-btn" aria-label="Восстановить товар в списке покупок">Восстановить</button>
-                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок">
-                      <img class="purchase__remove-icon" width="22" height="22" alt="" title="Удалить товар" src="#">
+
+                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок" title="Удалить товар">
+                      <svg width="22" height="22" aria-hidden="true" class="purchase__remove-icon" >
+                        <use xlink:href="#remove-icon"></use>
+                      </svg>
                     </button>
                   </div>
                 </li>
 
                 <li class="purchases__item purchase">
                   <div class="purchase__block">
-                    <img class="purchase__img" width="130" height="160" alt="" src="#"/>
+                    <img class="purchase__img" width="130" height="160" alt="Женская вязаная шапка демисезон" title="Женская шапка демисезон" src="#"/>
 
                     <div class="purchase__description description">
                       <p class="description__name">Вязанная шапка Zolla</p>
@@ -282,12 +292,12 @@
                     </div>
 
                     <div class="purchase__amount amount">
-                      <button class="btn amount__btn-remove" type="button" disabled>-</button>
+                      <button class="btn amount__btn-remove" type="button" disabled>&minus;</button>
 
                       <label class="visually-hidden" for="counter__1"></label>
                       <input class="amount__input" id="counter__1" type="number" value="1"/>
 
-                      <button class="btn amount__btn-add" type="button">+</button>
+                      <button class="btn amount__btn-add" type="button">&plus;</button>
                     </div>
 
 
@@ -296,8 +306,10 @@
                       <p class="total-prices__item total-prices__item--bold">500&nbsp;₽</p>
                     </div>
 
-                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок">
-                      <img class="purchase__remove-icon" width="22" height="22" alt="" title="Удалить товар" src="#">
+                    <button class="btn purchase__remove-btn" type="button" aria-label="Удалить товар из списка покупок" title="Удалить товар">
+                      <svg width="22" height="22" aria-hidden="true" class="purchase__remove-icon" >
+                        <use xlink:href="#remove-icon"></use>
+                      </svg>
                     </button>
                   </div>
                 </li>
@@ -345,30 +357,34 @@
               </form>
             </div>
 
-            <div class="cart__payments payments">
+            <div class="payments cart__payments">
               <h3 class="title payments__title">Оплата</h3>
-              <div class="payments__payment-list payment-list">
+              <div class="payment payments__payment">
                 <label for="cash" class="payment__item">
                   <input id="cash" type="radio" name="payment" class="payment__radio" checked/>
-                  Наличными курьеру
+                  <span class="payment__label">Наличными курьеру</span>
                 </label>
 
                 <label for="card__courier" class="payment__item">
                   <input id="card__courier" type="radio" name="payment" class="payment__radio"/>
-                  Картой курьеру
+                  <span class="payment__label">Картой курьеру</span>
                 </label>
 
                 <label for="card__online" class="payment__item">
                   <input id="card__online" type="radio" name="payment" class="payment__radio"/>
-                  Картой онлайн
+                  <span class="payment__label">Картой онлайн</span>
                 </label>
               </div>
             </div>
 
-            <div class="cart__comment comment">
+            <div class="comment cart__comment">
               <h3 class="title comment__title">Комментарий к заказу</h3>
-              <label class="visually-hidden" for="comment">Оставьте в поле комментарий к заказу или оставьте пустым</label>
-              <textarea id="comment" maxlength="142" class="comment__textarea">Комментарий к заказу</textarea>
+
+              <div class="comment__container">
+                <textarea id="comment" minlength="1" maxlength="142" class="comment__textarea" placeholder="Комментарий к заказу"></textarea>
+                <label class="comment__label" for="comment">Комментарий к заказу</label> <!--Оставьте в поле комментарий к заказу или оставьте пустым-->
+              </div>
+
               <p class="comment__info">Использовано 0/142 символов</p>
             </div>
           </div>
@@ -381,32 +397,39 @@
                 <tbody>
                 <tr class="prices-table__row prices-table__row--big">
                   <td class="prices-table__text">Товары</td>
-                  <td class="prices-table__price">24&nbsp;500&nbsp;₽</td>
+                  <td class="prices-table__price">24&nbsp;500&nbsp;<span class="prices-table__currency">₽</span></td>
                 </tr>
                 <tr class="prices-table__row prices-table__row--big">
                   <td class="prices-table__text">Скидка</td>
-                  <td class="prices-table__price prices-table__price--sale">-&nbsp;4&nbsp;500&nbsp;₽</td>
+                  <td class="prices-table__price prices-table__price--sale">-&nbsp;4&nbsp;500&nbsp;<span class="prices-table__currency">₽</span></td>
                 </tr>
                 <tr class="prices-table__row prices-table__row--small">
                   <td class="prices-table__text">Акции</td>
-                  <td class="prices-table__price prices-table__price--sale">-&nbsp;4&nbsp;000&nbsp;₽</td>
+                  <td class="prices-table__price prices-table__price--sale">-&nbsp;4&nbsp;000&nbsp;<span class="prices-table__currency">₽</span></td>
                 </tr>
                 <tr class="prices-table__row prices-table__row--small">
                   <td class="prices-table__text">Промокод</td>
-                  <td class="prices-table__price prices-table__price--sale">-&nbsp;500&nbsp;₽</td>
+                  <td class="prices-table__price prices-table__price--sale">-&nbsp;500&nbsp;<span class="prices-table__currency">₽</span></td>
                 </tr>
                 <tr class="prices-table__row prices-table__row--big">
                   <td class="prices-table__text">Доставка</td>
-                  <td class="prices-table__price">200&nbsp;₽</td>
+                  <td class="prices-table__price">200&nbsp;<span class="prices-table__currency">₽</span></td>
                 </tr>
                 </tbody>
               </table>
 
-              <div class="bill__delivery delivery">
-                <p class="delivery__text">
-                  Получить товар со склада
-                  <button class="btn delivery__btn" type="button">Переключить</button>
-                </p>
+              <div class="delivery bill__delivery">
+
+                <div class="toggle delivery__toggle">
+                  <div class="toggle__container">
+                    <label class="toggle__label" for="toggle">
+                      Получить товар со склада
+                      <input type="checkbox" name="toggle" id="toggle" class="toggle__input" />
+                      <span class="toggle__switch" hidden></span> <!--TODO -->
+                    </label>
+                  </div>
+                </div>
+
                 <span class="delivery__sub">Сроки получения могут измениться</span>
               </div>
 
@@ -415,9 +438,11 @@
                 <span class="bill__price">20&nbsp;700&nbsp;₽</span>
               </h3>
 
-              <form class="bill__form-order form-order">
-                <label for="promo_code" class="visually-hidden">Поле для введения промокода</label>
-                <input id="promo_code" type="text" placeholder="Введите промокод" class="form-order__input"/>
+              <form class="form-order bill__form-order">
+                <div class="form-order__container">
+                  <input id="promo_code" type="text" placeholder="Введите промокод" class="form-order__input"/>
+                  <label for="promo_code" class="form-order__label">Введите промокод</label>
+                </div>
 
                 <button type="submit" class="btn form-order__btn">Оформить заказ</button>
 
@@ -440,22 +465,24 @@
 
     <footer class="footer">
 
-      <div class="footer__container container">
-        <div class="footer__subscribe subscribe">
-          <h3 class="title footer__title">Скидка 10% за подписку <br/>на наши новости</h3>
+      <div class="container footer__container">
 
-          <form class="subscribe__form-subscription form-subscription">
-            <label class="visually-hidden" for="subscribe"> Email:</label>
-            <input id="subscribe" type="email" class="form-subscription__input" value="example@mail.ru"/>
+        <div class="subscription footer__subscription">
+          <h3 class="title subscription__title">Скидка 10% за подписку <br/>на наши новости</h3>
+          <form class="form-subscription subscription__form-subscription">
+
+            <div class="form-subscription__container">
+              <input id="subscribe-input" type="email" class="form-subscription__input" value="example@mail.ru" placeholder="example@mail.ru" required/>
+              <label class="form-subscription__label" for="subscribe-input"> Адрес электронной почты</label>
+            </div>
 
             <button type="submit" class="btn form-subscription__btn">
               Подписаться
             </button>
           </form>
 
-
-          <p class="subscribe__text">
-            Нажимая кнопку “Подписаться”, Вы соглашаетесь с <a href="#" class="link subscribe__link">политикой конфиденциальности</a>
+          <p class="subscription__text">
+            Нажимая кнопку “Подписаться”, Вы соглашаетесь с <a href="#" class="link subscription__link">политикой конфиденциальности</a>
           </p>
         </div>
 

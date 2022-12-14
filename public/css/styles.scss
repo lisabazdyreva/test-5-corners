@@ -202,6 +202,9 @@ html {
   &__contacts {
     padding-top: 40px;
   }
+  &__comment {
+    padding-top: 20px;
+  }
 }
 
 .heading {
@@ -412,7 +415,7 @@ html {
     line-height: 21px;
     background-color: $button-gray;
     &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button{
+    &::-webkit-inner-spin-button {
       -webkit-appearance: none;
     }
   }
@@ -474,7 +477,7 @@ html {
   &__title {
     font-size: 28px;
     line-height: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
   }
 }
 
@@ -547,7 +550,7 @@ html {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 14px 20px;
+    padding: 15px 20px;
 
     transition: 0.3s ease all;
     -moz-transition: 0.3s ease all;
@@ -580,48 +583,115 @@ html {
 }
 
 .payments {
-  &__payment-list {
+  &__payment {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 }
 
-.payment-list {
+.payment {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  &__item {
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__radio {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+
+    background-color: $white;
+    border: 1px solid $light-gray;
+
+    position: relative;
+    cursor: pointer;
+
+    &:checked {
+      background-color: $black;
+      border: 4px solid $white;
+      outline: 1px solid $light-gray;
+    }
+  }
 }
 
-.payment__item {
-  font-size: 16px;
-  line-height: 21px;
-  padding-bottom: 20px;
-}
-
-.payment__radio {
-  padding-right: 10px;
-}
 
 .comment {
   display: flex;
   flex-direction: column;
+
+  &__container {
+    width: 100%;
+    position: relative;
+  }
+
+  &__textarea {
+    height: 140px;
+    max-width: 760px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid $light-gray;
+    resize: none;
+
+    &:focus {
+      outline: none; //TODO
+    }
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus + .comment__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-gray;
+      background-color: $white;
+      padding: 4px 2px;
+      left: 16px;
+      top: -11px;
+    }
+
+    &:valid + .comment__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-gray;
+      background-color: $white;
+      padding: 4px 2px;
+      left: 16px;
+      top: -11px;
+    }
+
+  }
+
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px 20px;
+    pointer-events: none;
+
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+  }
+
+  &__info {
+    margin: 0;
+    padding-top: 4px;
+    color: $light-gray;
+    font-size: 12px;
+    line-height: 15px;
+    padding-left: 20px;
+  }
 }
 
-.comment__textarea {
-  height: 140px;
-  padding: 15px 20px;
-  border: 1px solid $light-gray;
-  margin-top: 20px;
-  resize: none;
-}
-
-.comment__info {
-  margin: 0;
-  padding-top: 4px;
-  color: $light-gray;
-  font-size: 12px;
-  line-height: 15px;
-  padding-left: 20px;
-}
 
 //bill
 .bill {
@@ -653,6 +723,10 @@ html {
   .prices-table__price {
     padding-top: 20px;
   }
+
+  .prices-table__price {
+    font-weight: 700;
+  }
 }
 
 .prices-table__row--small {
@@ -660,11 +734,17 @@ html {
   .prices-table__price {
     padding-top: 8px;
   }
+  .prices-table__price {
+    font-weight: 400;
+  }
 }
 
 .prices-table__price {
   text-align: end;
-  font-weight: 700;
+}
+
+.prices-table__currency {
+  font-weight: 400;
 }
 
 .prices-table__price--sale {
@@ -675,14 +755,61 @@ html {
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 0.5px solid $line-gray;
+  &delivery__toggle {
+
+  }
 }
 
-.delivery__text {
-  margin: 0;
-  font-size: 20px;
-  line-height: 24px;
-  padding-bottom: 7px;
+.toggle {
+  &__label {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &__input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    &:checked + .toggle__switch::before {
+      background-color: #000000;
+      left: 19px;
+    }
+  }
+  &__switch {
+    display: flex;
+    width: 34px;
+    height: 14px;
+    background-color: rgba(200, 200, 200, 0.5);
+    position: relative;
+    border-radius: 7px;
+    transition: 300ms;
+    &::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: #6E6E6E;
+      left: -7px;
+
+      align-self: center;
+      transition: inherit;
+    }
+  }
 }
+
+//.delivery__text {
+//  margin: 0;
+//  font-size: 20px;
+//  line-height: 24px;
+//  padding-bottom: 7px;
+//}
 
 .delivery__sub {
   display: block;
@@ -706,6 +833,10 @@ html {
 }
 
 .form-order {
+  &__container {
+    width: 100%;
+    position: relative;
+  }
   &__input {
     display: block;
     width: 100%;
@@ -713,7 +844,41 @@ html {
     font-size: 16px;
     line-height: 21px;
     padding: 15px 20px;
+
+    &:focus + .form-order__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-gray;
+      background-color: $white;
+      padding: 4px 2px;
+      left: 16px;
+      top: -11px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
   }
+
+  &__label {
+    font-size: 16px;
+    color: $light-gray;
+    line-height: 21px;
+    padding: 15px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+  }
+
   &__btn {
     background-color: $black;
     color: $white;
@@ -750,10 +915,6 @@ html {
     padding-top: 30px;
     justify-content: space-between;
   }
-  &__title {
-    font-size: 28px;
-    line-height: 30px;
-  }
   &__container-info {
     display: flex;
     padding-top: 100px;
@@ -762,8 +923,13 @@ html {
   }
 }
 
-.subscribe {
+.subscription {
   max-width: 416px;
+  &__title {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
   &__text {
     padding-top: 10px;
     color: $light-gray;
@@ -777,6 +943,11 @@ html {
 }
 
 .form-subscription {
+  &__container {
+    width: 100%;
+    position: relative;
+  }
+
   &__input {
     margin-top: 20px;
     display: block;
@@ -785,13 +956,52 @@ html {
     font-size: 16px;
     line-height: 21px;
     padding: 15px 20px;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      outline: none; //TODO
+    }
+
+    &:focus + .form-subscription__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-gray;
+      background-color: $white;
+      padding: 4px 2px;
+      left: 16px;
+      top: -11px;
+    }
+
+    &:valid + .form-subscription__label {
+      font-size: 12px;
+      line-height: 15px;
+      color: $light-gray;
+      background-color: $white;
+      padding: 4px 2px;
+      left: 16px;
+      top: -11px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 15px 20px;
+    color: $light-gray;
+
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+    pointer-events: none;
   }
 }
 
-.navs {
-  //max-width: 545px;
-
-}
 
 .navs {
   display: flex;
