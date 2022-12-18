@@ -71,6 +71,7 @@ html {
 
 //header desktop
 
+
 .header {
   border-bottom: 0.5px solid $line-gray;
   &__container {
@@ -103,6 +104,9 @@ html {
   &__link {
     display: block;
     padding: 27px 20px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -115,6 +119,7 @@ html {
   }
   &__icon {
     display: block;
+    stroke: $black;
   }
   &__search-button {
     border: none;
@@ -122,9 +127,36 @@ html {
     cursor: pointer;
     padding: 0;
     display: block;
+    &:hover .user-nav__icon {
+      stroke: $light-gray;
+    }
   }
   &__item {
     height: 100%;
+  }
+  &__link {
+    display: flex;
+    position: relative;
+    &:hover .user-nav__icon {
+      stroke: $light-gray;
+    }
+  }
+  &__favorite-count,
+  &__cart-count {
+    display: flex;
+    align-items: flex-start;
+    background-color: $black;
+    width: 15px;
+    height: 15px;
+    color: $white;
+    font-size: 10px;
+    line-height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    left: 12px;
+    justify-content: center;
+    padding-top: 1px;
   }
 }
 
@@ -176,6 +208,10 @@ html {
     &--active {
       color: $black;
     }
+    &--inactive:hover {
+      color: $black;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -217,6 +253,9 @@ html {
   &__link {
     color: $black;
     padding-left: 5px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &__title {
     font-size: 40px;
@@ -256,7 +295,14 @@ html {
     height: 22px;
     padding: 0;
     margin: 0 0 0 10px;
+    &:hover .purchase__remove-icon {
+      stroke: $light-gray;
+    }
   }
+  &__remove-icon {
+    stroke: $black;
+  }
+
 }
 
 .description {
@@ -307,6 +353,11 @@ html {
       background-color: $black;
       color: $white;
     }
+
+    &:hover ~ .size-list__letter {
+      background-color: $line-gray;
+    }
+
     &:disabled ~ .size-list__letter {
       color: $line-gray;
       cursor: not-allowed;
@@ -353,6 +404,10 @@ html {
       border: 2px solid #ffffff; //TODo поправить цвета
       outline: 1px solid #000000;
     }
+    &:hover:not(:checked) {
+      border: 1px solid #ffffff;
+      outline: 1px solid #C8C8C8
+    }
     &--black {
       border: 1px solid #444444;
       background-color: #444444;
@@ -369,6 +424,10 @@ html {
 }
 
 .prices {
+  max-height: 44px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   &__item {
     margin: 0;
     &--line-through { //TODO подумать над названием
@@ -389,20 +448,47 @@ html {
   display: flex;
   height: 42px;
 
+  &__icon {
+    vertical-align: middle;
+    stroke: $black;
+  }
+
   &__btn {
     &-add {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 8px;
+      padding-right: 10px;
       border: none;
       border-radius: 0 5px 5px 0;
       background-color: $button-gray;
+      &:disabled {
+        cursor: not-allowed;
+        .amount__icon {
+          stroke: $line-gray;
+        }
+      }
+      &:hover:enabled {
+        .amount__icon {
+          stroke: $light-gray;
+        }
+      }
     }
     &-remove {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 10px;
+      padding-right: 8px;
       border: none;
       border-radius: 5px 0 0 5px;
       background-color: $button-gray;
+      &:disabled {
+        cursor: not-allowed;
+        .amount__icon {
+          stroke: $line-gray;
+        }
+      }
+      &:hover:enabled {
+        .amount__icon {
+          stroke: $light-gray;
+        }
+      }
     }
   }
 
@@ -422,6 +508,10 @@ html {
 }
 
 .total-prices {
+  max-height: 44px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   &__item {
     margin: 0;
     &--line-through {
@@ -442,8 +532,15 @@ html {
   background-color: $button-gray;
   padding: 15.5px 25px;
   justify-content: space-between;
+
   .purchase__restore-btn {
+    font-size: 14px;
+    line-height: 18px;
     margin-right: auto;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -487,11 +584,122 @@ html {
   padding-top: 20px;
 }
 
+//.user-form {
+//  display: flex;
+//  flex-wrap: wrap;
+//  flex-direction: row;
+//  gap: 20px;
+//  &__group {
+//    display: flex;
+//    width: 100%;
+//    border: none;
+//    padding: 0;
+//    margin: 0;
+//    justify-content: space-between;
+//  }
+//
+//  &__input {
+//    box-sizing: border-box;
+//    font-size: 16px;
+//    line-height: 21px;
+//    padding: 14px 20px;
+//    border: 1px solid $light-gray;
+//    max-width: 370px;
+//    width: 100%;
+//
+//    &::placeholder{
+//      color: transparent;
+//    }
+//
+//    &:focus {
+//      outline: none; //TODO спорное
+//    }
+//
+//    &:focus + .user-form__label {
+//      font-size: 12px;
+//      line-height: 15px;
+//      color: $light-gray;
+//      background-color: $white;
+//      padding: 4px 2px;
+//      left: 16px;
+//      top: -11px;
+//    }
+//
+//    &:valid + .user-form__label {
+//      font-size: 12px;
+//      line-height: 15px;
+//      color: $light-gray;
+//      background-color: $white;
+//      padding: 4px 2px;
+//      left: 16px;
+//      top: -11px;
+//    }
+//
+//    &:invalid {
+//      border: 1px solid $error;
+//    }
+//
+//    &:invalid + .user-form__label {
+//      color: $error;
+//    }
+//
+//    &--full {
+//      max-width: 760px;
+//    }
+//  }
+//
+//  &__label {
+//    font-size: 16px;
+//    line-height: 21px;
+//    color: $light-gray;
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    padding: 15px 20px;
+//
+//    transition: 0.3s ease all;
+//    -moz-transition: 0.3s ease all;
+//    -webkit-transition: 0.3s ease all;
+//    pointer-events: none;
+//  }
+//
+//  &__container {
+//    width: 100%;
+//    position: relative;
+//
+//    &:nth-child(2n) {
+//      text-align: end;
+//
+//      .user-form__input {
+//        &:focus + .user-form__label {
+//          left: 26px;
+//        }
+//
+//        &:valid + .user-form__label {
+//          left: 26px;
+//        }
+//      }
+//      .user-form__label {
+//        left: 10px;
+//      }
+//    }
+//  }
+//
+//}
+
 .user-form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 20px;
+
+  &__caption {
+    color: $light-gray;
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 4px;
+  }
+
   &__group {
     display: flex;
     width: 100%;
@@ -510,7 +718,7 @@ html {
     max-width: 370px;
     width: 100%;
 
-    &::placeholder{
+    &::placeholder {
       color: transparent;
     }
 
@@ -528,7 +736,7 @@ html {
       top: -11px;
     }
 
-    &:valid + .user-form__label {
+    &--filled + .user-form__label {
       font-size: 12px;
       line-height: 15px;
       color: $light-gray;
@@ -540,6 +748,10 @@ html {
 
     &--full {
       max-width: 760px;
+    }
+
+    &:valid ~ .user-form__caption {
+      display: none;
     }
   }
 
@@ -561,27 +773,34 @@ html {
   &__container {
     width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .user-form__caption {
+      padding-left: 20px;
+    }
 
     &:nth-child(2n) {
-      text-align: end;
+      align-items: end;
 
-      .user-form__input {
-        &:focus + .user-form__label {
-          left: 26px;
-        }
-
-        &:valid + .user-form__label {
-          left: 26px;
-        }
+      .user-form__caption {
+        align-self: start;
+        padding-left: 20px;
+        position: relative;
+        left: 10px;
       }
+
       .user-form__label {
         left: 10px;
       }
+
+      .user-form__input:focus ~ .user-form__label,
+      .user-form__input--filled ~ .user-form__label {
+        left: 26px;
+      }
     }
   }
-
 }
-
 .payments {
   &__payment {
     padding-top: 20px;
@@ -769,12 +988,15 @@ html {
 
     font-size: 20px;
     line-height: 24px;
+    cursor: pointer;
   }
   &__input {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
+
+    cursor: pointer;
 
     &:checked + .toggle__switch::before {
       background-color: #000000;
@@ -886,6 +1108,14 @@ html {
     font-weight: 700;
     width: 100%;
     margin-top: 20px;
+    &:hover {
+      background-color: $light-gray;
+    }
+    &:disabled {
+      background-color: $line-gray;
+      color:$light-gray;
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -908,12 +1138,18 @@ html {
 
 
 .footer {
-  border-top: 0.5px solid $line-gray;
-  margin-top: 40px;
+  //margin-top: 40px;
   &__container {
     margin: 0 auto;
     padding-top: 30px;
     justify-content: space-between;
+    &--border {
+      border-top: 0.5px solid $line-gray;
+    }
+  }
+
+  &__container:first-child {
+    justify-content: end;
   }
   &__container-info {
     display: flex;
@@ -921,7 +1157,38 @@ html {
     margin: 0 auto;
     justify-content: space-between;
   }
+
+  &__btn-up {
+    margin-right: 200px;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    &:hover .footer__icon-arrow {
+      path {
+        fill: $light-gray;
+      }
+      rect {
+        stroke: $light-gray;
+      }
+    }
+  }
+
+  &__icon-arrow path {
+    fill: $line-gray;
+  }
+
+  &__icon-arrow rect {
+    stroke: $line-gray;
+  }
 }
+
+//.arrow-up path {
+//  fill: $line-gray;
+//}
+//
+//.arrow-up rect {
+//  stroke: $line-gray;
+//}
 
 .subscription {
   max-width: 416px;
